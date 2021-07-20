@@ -1,12 +1,27 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Container, Title, Header, Subtitle, Paragraph } from "../styles/index";
+import { PROFILES } from "../constants/profiles";
+import { WORK } from "../constants/work";
+import {
+  Container,
+  Title,
+  Header,
+  Subtitle,
+  Paragraph,
+  SectionTitle,
+  WorkSectionContainer,
+  WorkTitle,
+  WorkDescription,
+  WorkExtra,
+  ProfilesSectionContainer,
+  ProfileItem,
+} from "../styles/index";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Rahul Jain</title>
+        <title>Rahul Jain: Developer, Freelance, & Animator</title>
       </Head>
       <Container>
         <Header>
@@ -26,10 +41,55 @@ export default function Home() {
             </a>
           </Title>
           <Paragraph>
-            I'm a <strong>Freelancer</strong>, <strong>Animator</strong>, and{" "}
+            I'm an <strong>Open Source Contributor</strong>,{" "}
+            <strong>Freelancer</strong>, <strong>Animator</strong> &{" "}
             <strong>Seller on Fiverr(Level 2)</strong>.
           </Paragraph>
         </Header>
+        <section id="work">
+          <SectionTitle align="left">
+            <span className="accent-line">Work</span>
+          </SectionTitle>
+          {WORK &&
+            WORK.map((data) => {
+              return (
+                <WorkSectionContainer key={data.title+data.link}>
+                  <WorkTitle>
+                    <a href={data.link} target="_blank">
+                      {data.title}
+                    </a>
+                    <span>
+                      <Image
+                        src="/right-arrow.png"
+                        width={18}
+                        height={18}
+                        alt="external-link"
+                      />
+                    </span>
+                  </WorkTitle>
+                  <WorkDescription>{data.description}</WorkDescription>
+                  <WorkExtra>{data.extra}</WorkExtra>
+                </WorkSectionContainer>
+              );
+            })}
+        </section>
+        <section id="profiles">
+          <SectionTitle>
+            <span className="accent-line">Online Presence</span>
+          </SectionTitle>
+          <ProfilesSectionContainer>
+            {PROFILES &&
+              PROFILES.map((profile) => {
+                return (
+                  <ProfileItem key={profile.title+profile.link}>
+                    <a href={profile.link} target="_blank">
+                      {profile.title}
+                    </a>
+                  </ProfileItem>
+                );
+              })}
+          </ProfilesSectionContainer>
+        </section>
       </Container>
     </>
   );
