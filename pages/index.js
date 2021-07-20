@@ -43,7 +43,7 @@ export default function Home() {
           <Paragraph>
             I'm an <strong>Open Source Contributor</strong>,{" "}
             <strong>Freelancer</strong>, <strong>Animator</strong> &{" "}
-            <strong>Seller on Fiverr(Level 2)</strong>.
+            <strong>Seller on Fiverr (Level 2)</strong>.
           </Paragraph>
         </Header>
         <section id="work">
