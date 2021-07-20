@@ -1,0 +1,33 @@
+{
+  "name": "styled-nextjs-boilerplate",
+  "version": "0.0.1",
+  "description": "minimal nextjs with styled-components boilerplate template",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahuldkjain/styled-nextjs-boilerplate.git"
+  },
+  "keywords": [
+    "styled-nextjs-boilerplate"
+  ],
+  "author": "rahuldkjain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahuldkjain/styled-nextjs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rahuldkjain/styled-nextjs-boilerplate#readme",
+  "dependencies": {
+    "next": "^11.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.1"
+  }
+}
