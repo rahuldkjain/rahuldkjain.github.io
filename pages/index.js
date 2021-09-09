@@ -36,8 +36,8 @@ export default function Home() {
           <Title>
             I develop interactive <span className="accent-line">web-apps</span>{" "}
             at{" "}
-            <a href="https://zolostays.com" target="_blank">
-              Zolo
+            <a href="https://cred.club/" target="_blank">
+              CRED
             </a>
           </Title>
           <Paragraph>
