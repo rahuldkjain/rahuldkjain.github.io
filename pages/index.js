@@ -15,6 +15,7 @@ import {
   ProfilesSectionContainer,
   ProfileItem,
 } from "../styles/index";
+import SocialSection from "../components/SocialSection";
 
 export default function Home() {
   return (
@@ -25,7 +26,7 @@ export default function Home() {
       <Container>
         <Header>
           <img
-            src="/PortfolioHeadshot.webp"
+            src="/rahul-avatar.png"
             alt="rahuldkjain headshot"
             width={180}
             height={180}
@@ -44,6 +45,7 @@ export default function Home() {
             <strong>Seller on Fiverr (Level 2)</strong>.
           </Paragraph>
         </Header>
+        <SocialSection />
         <section id="work">
           <SectionTitle align="left">
             <span className="accent-line">Work</span>

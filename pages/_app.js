@@ -4,6 +4,36 @@ import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "../constants/theme";
 
 const GlobalStyle = createGlobalStyle`
+@font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/Wotfard-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/Wotfard-Medium.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/Wotfard-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/Wotfard-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Wotfard";
+    src: url("/fonts/Wotfard-Thin.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+  }
   *{
     box-sizing: border-box;
   }
@@ -12,7 +42,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    font-family: ${({ theme }) => theme.fonts.poppins};
+    font-family: ${({ theme }) => theme.fonts.wotfard};
   }
   #__next{
     height: 100%;

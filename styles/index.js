@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   box-sizing: border-box;
-  padding: 64px;
+  padding: 64px 20%;
   a {
     color: ${({ theme }) => theme.colors.blue};
   }
@@ -11,6 +11,20 @@ export const Container = styled.div`
     background-position: 50% 100%;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+  #rahuldkjain-social {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 88px;
+  }
+  #twitter-social-container {
+    margin: 8px 8px 8px 0;
+  }
+  #github-social-container {
+    margin: 8px 0;
   }
   @media (max-width: 480px) {
     padding: 64px 16px;
@@ -91,8 +105,9 @@ export const WorkDescription = styled.p`
 
 export const WorkExtra = styled.p`
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: 16px;
+  color: #575c67;
 `;
 
 export const ProfilesSectionContainer = styled.section`
