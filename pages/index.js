@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { PROFILES } from "../constants/profiles";
 import { WORK } from "../constants/work";
 import {
@@ -25,12 +24,11 @@ export default function Home() {
       </Head>
       <Container>
         <Header>
-          <Image
+          <img
             src="/PortfolioHeadshot.webp"
             alt="rahuldkjain headshot"
             width={180}
             height={180}
-            priority={true}
           />
           <Subtitle>Hey, I'm Rahul Jain</Subtitle>
           <Title>
@@ -53,13 +51,13 @@ export default function Home() {
           {WORK &&
             WORK.map((data) => {
               return (
-                <WorkSectionContainer key={data.title+data.link}>
+                <WorkSectionContainer key={data.title + data.link}>
                   <WorkTitle>
                     <a href={data.link} target="_blank">
                       {data.title}
                     </a>
                     <span>
-                      <Image
+                      <img
                         src="/right-arrow.png"
                         width={18}
                         height={18}
@@ -81,7 +79,7 @@ export default function Home() {
             {PROFILES &&
               PROFILES.map((profile) => {
                 return (
-                  <ProfileItem key={profile.title+profile.link}>
+                  <ProfileItem key={profile.title + profile.link}>
                     <a href={profile.link} target="_blank">
                       {profile.title}
                     </a>
