@@ -22,6 +22,18 @@ export default function Home() {
     <>
       <Head>
         <title>Rahul Jain: Developer, Freelance, & Animator</title>
+        <script
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="rahuldkjain"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Buy me a coffee!"
+          data-color="#FFDD00"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="18"
+        ></script>
       </Head>
       <Container>
         <Header>

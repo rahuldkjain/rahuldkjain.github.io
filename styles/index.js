@@ -36,7 +36,6 @@ export const Header = styled.header`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 64px;
 `;
 export const Title = styled.h1`
   text-align: center;
