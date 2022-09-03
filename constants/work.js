@@ -1,10 +1,17 @@
 export const WORK = [
   {
+    title: "CRED's NeoPOP component library",
+    description:
+      "brand new UI framework engineered to bring the magic of NeoPOP to life. because art belongs to everyone.",
+    link: "https://github.com/CRED-CLUB/neopop-web",
+    extra: "Open Source Project (800+ Stars, 110+ Forks)",
+  },
+  {
     title: "GitHub Profile README Generator",
     description:
       "open source tool to create GitHub profile README with the latest add-ons like visitors count, GitHub stats, etc.",
     link: "https://github.com/rahuldkjain/github-profile-readme-generator",
-    extra: "Open Source Project (7.7K+ Stars, 1.5K+ Forks)",
+    extra: "Open Source Project (12K+ Stars, 3K+ Forks)",
   },
   {
     title: "Dose Medbox",
