@@ -1,0 +1,133 @@
+.contact {
+  padding: 96px 48px 48px;
+  background: var(--surface);
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact__headline {
+  font-family: var(--font-display);
+  font-size: clamp(56px, 6vw, 96px);
+  font-weight: 300;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.contact__headline em {
+  font-style: italic;
+  color: var(--caramel);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact__email,
+.contact__phone {
+  position: relative;
+  font-size: 16px;
+  color: var(--ink);
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.contact__email::after,
+.contact__phone::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background: var(--caramel);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out-quart);
+}
+
+.contact__email:hover,
+.contact__phone:hover {
+  color: var(--caramel);
+}
+
+.contact__email:hover::after,
+.contact__phone:hover::after {
+  transform: scaleX(1);
+}
+
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.contact__social-link {
+  position: relative;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--mocha);
+  transition: color 0.2s ease, transform 0.35s var(--ease-out-quart);
+}
+
+.contact__social-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 1px;
+  background: var(--caramel);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s var(--ease-out-quart);
+}
+
+.contact__social-link:hover {
+  color: var(--caramel);
+  transform: translateY(-2px);
+}
+
+.contact__social-link:hover::after {
+  transform: scaleX(1);
+}
+
+.contact__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+.contact__copy,
+.contact__made {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mocha);
+}
+
+@media (max-width: 600px) {
+  .contact {
+    padding: 64px 24px 32px;
+    gap: 48px;
+  }
+
+  .contact__foot {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+}

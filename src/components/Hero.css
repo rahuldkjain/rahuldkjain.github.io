@@ -1,0 +1,146 @@
+.hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: 48px;
+  padding: 0 max(48px, 8vw);
+  position: relative;
+  overflow: hidden;
+  background-image:
+    radial-gradient(
+      ellipse 60% 50% at 92% 30%,
+      rgba(168, 106, 44, 0.08) 0%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 50% 40% at 5% 95%,
+      rgba(168, 106, 44, 0.05) 0%,
+      transparent 70%
+    );
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 720px;
+  padding-top: 80px;
+}
+
+.hero__eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--caramel);
+  font-weight: 600;
+}
+
+.hero__flourish {
+  color: var(--caramel);
+  opacity: 0.85;
+  margin-top: -18px;
+}
+
+.hero__headline {
+  font-family: var(--font-display);
+  font-size: clamp(54px, 7.6vw, 116px);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-top: 8px;
+}
+
+.hero__headline em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--caramel);
+}
+
+.hero__sub {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--mocha);
+  font-weight: 400;
+  max-width: 540px;
+  margin-top: 8px;
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 6px;
+  width: fit-content;
+  margin-top: 12px;
+  transition: gap 0.25s var(--ease-out-quart), color 0.2s ease, border-color 0.2s ease;
+}
+
+.hero__cta:hover {
+  color: var(--caramel);
+  border-color: var(--caramel);
+  gap: 18px;
+}
+
+/* ===== Right column: coffee cup illustration ===== */
+.hero__art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink);
+  padding-top: 80px;
+}
+
+.hero__art svg {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+  filter: drop-shadow(0 12px 28px rgba(58, 36, 24, 0.08));
+}
+
+/* Steam — runtime values are driven entirely by GSAP from Hero.tsx.
+   `opacity: 0` hides the wisps from initial paint so they don't all flash
+   onscreen before useEffect runs. GSAP's inline opacity overrides this once
+   each wisp enters its draw phase. */
+.hero__steam path {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+/* Fallback when JS / GSAP fails to load — show wisps statically drawn. */
+@media (prefers-reduced-motion: reduce) {
+  .hero__steam path {
+    opacity: 0.5;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 0 24px;
+    align-items: start;
+  }
+  .hero__content {
+    padding-top: 140px;
+    gap: 22px;
+  }
+  .hero__sub {
+    font-size: 15px;
+  }
+  .hero__art {
+    padding-top: 24px;
+    padding-bottom: 64px;
+  }
+  .hero__art svg {
+    max-width: 220px;
+  }
+}

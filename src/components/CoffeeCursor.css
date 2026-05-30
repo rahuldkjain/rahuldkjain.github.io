@@ -1,0 +1,41 @@
+/* Hide the native cursor only when the follower actually activated. */
+body.has-coffee-cursor,
+body.has-coffee-cursor * {
+  cursor: none !important;
+}
+
+.coffee-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  /* Centre the bean on the pointer; JS sets translate on this element. */
+  margin-left: -16px;
+  margin-top: -16px;
+  opacity: 0;
+  will-change: transform;
+  transition: opacity 0.25s ease;
+}
+
+.coffee-cursor--visible {
+  opacity: 1;
+}
+
+/* Inner wrapper handles the hover scale/rotate so it doesn't fight the
+   JS-driven translate on the outer element. */
+.coffee-cursor__bean {
+  width: 32px;
+  height: 32px;
+  transform: scale(1) rotate(0deg);
+  transition: transform 0.22s var(--ease-out-quart, cubic-bezier(0.25, 1, 0.5, 1));
+  filter: drop-shadow(0 2px 4px rgba(58, 36, 24, 0.35));
+}
+
+.coffee-cursor--hover .coffee-cursor__bean {
+  transform: scale(1.6) rotate(18deg);
+}
+
+.coffee-cursor__bean svg {
+  display: block;
+}
