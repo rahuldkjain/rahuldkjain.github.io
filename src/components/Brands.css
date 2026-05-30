@@ -1,0 +1,136 @@
+.brands {
+  padding: 96px max(48px, 10vw);
+  border-top: 1px solid var(--rule);
+}
+
+.brands__header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 56px;
+  max-width: 640px;
+}
+
+.brands__title {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--caramel);
+}
+
+.brands__lede {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+}
+
+.brands__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px 48px;
+  align-items: center;
+}
+
+.brands__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  border-bottom: 1px solid var(--rule);
+  padding: 12px 0;
+  transition-delay: var(--delay, 0s);
+}
+
+.brands__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: var(--mocha);
+  opacity: 0.85;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.brands__logo:hover {
+  opacity: 1;
+}
+
+/* Scale every logo to fit a uniform bounding box. Both dimensions are auto so
+   each logo grows until it hits whichever cap comes first — wide wordmarks are
+   bounded by max-width, compact icon-logos by max-height — which keeps their
+   visual size consistent regardless of source SVG aspect ratio. */
+.brands__logo img {
+  height: auto;
+  width: auto;
+  max-height: 36px;
+  max-width: 72%;
+  object-fit: contain;
+  /* Recolor the logo to walnut. Filter pipeline: convert any source color
+     to pure black first, then shift to our --mocha hue. */
+  filter: brightness(0) saturate(100%) invert(24%) sepia(20%) saturate(900%) hue-rotate(355deg) brightness(0.85);
+  transition: filter 0.25s ease;
+}
+
+.brands__logo:hover img {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(28%) saturate(1200%) hue-rotate(355deg) brightness(0.75);
+}
+
+/* Per-brand overrides: these SVGs carry extra internal padding in their
+   viewBox, so they render visually smaller at the shared cap. Bump both caps
+   to even out the optical size. Selector is scoped under .brands__logo so it
+   outranks the `.brands__logo img` base rule. */
+.brands__logo .brands__img--cred {
+  max-height: 52px;
+  max-width: 92%;
+}
+
+.brands__logo .brands__img--tradyon {
+  max-height: 52px;
+  max-width: 92%;
+}
+
+.brands__logo .brands__img--hellocounsel {
+  max-height: 52px;
+  max-width: 92%;
+}
+
+/* These SVGs are tightly cropped, so they render visually larger at the shared
+   cap. Trim their height to even out the optical size. */
+.brands__logo .brands__img--thoughtspot {
+  max-height: 26px;
+}
+
+.brands__logo .brands__img--tenora {
+  max-height: 26px;
+}
+
+.brands__logo .brands__img--ema {
+  max-height: 26px;
+}
+
+@media (max-width: 960px) {
+  .brands__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .brands {
+    padding: 64px 24px;
+  }
+  .brands__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 24px;
+  }
+  .brands__cell {
+    height: 64px;
+  }
+}
